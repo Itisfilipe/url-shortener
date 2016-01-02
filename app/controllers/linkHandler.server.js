@@ -6,6 +6,10 @@ var Hashids = require('hashids');
 
 var hashids = new Hashids('this is my t0p this is my t0p s3cr3t salta =p');
 
+function testURL(url) {
+  return /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/.test(url);
+}
+
 function linkHandler() {
   this.getFullURL = function(req, res) {
     var shortHash = req.params.shortUrl;
@@ -28,7 +32,7 @@ function linkHandler() {
     var link = req.url.slice(1);
     if (!link) {
       res.status(400).json({message: 'URL to be shortened is missing.'});
-    } else if (!validURL.isWebUri(link)) {
+    } else if (!testURL(link)) {
       res.status(400).json({message: 'URL to be shortened is invalid.'});
     } else {
       var charMap = [];
