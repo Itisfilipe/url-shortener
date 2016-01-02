@@ -12,7 +12,7 @@ function testURL(url) {
 function linkHandler() {
   this.getFullURL = function(req, res) {
     var shortHash = req.params.shortUrl;
-    console.log(shortHash);
+    // console.log(shortHash);
     LinkModel.findOne(
       {'shortUrl': shortHash},
       'originalURL',
@@ -47,7 +47,7 @@ function linkHandler() {
       linkData.save(function(err, data) {
         if (err) {
           if (err.code === 11000) {
-            console.log(err);
+            // console.log(err);
             res.json({
               'originalURL': link,
               'shortUrl': hashPath
