@@ -8,8 +8,8 @@ var app = express();
 
 mongoose.connect('mongodb://127.0.0.1:27017/url_shortener_fcc');
 
-app.use('/public', express.static(process.cwd() + '/public'));
-app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
+//app.use('/public', express.static(process.cwd() + '/public'));
+//app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
 
 routes(app);
 
