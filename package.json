@@ -25,9 +25,7 @@
   "dependencies": {
     "express": "^4.13.3",
     "hashids": "^1.0.2",
-    "mongoose": "^4.3.4"
-  },
-  "devDependencies": {
+    "mongoose": "^4.3.4",
     "dotenv": "^1.2.0"
   }
 }
