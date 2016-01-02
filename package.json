@@ -1,16 +1,11 @@
 {
   "name": "url-shortener",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "URL Shortener made for Free Code Camp Curriculum.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xfilipe/url-shortener"
-  },
-  "homepage": "https://github.com/xfilipe/url-shortener/",
   "keywords": [
     "MEAN",
     "MongoDB",
