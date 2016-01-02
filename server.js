@@ -7,7 +7,19 @@ var mongoose = require('mongoose');
 
 var app = express();
 
-mongoose.connect('mongodb://127.0.0.1:27017/url_shortener_fcc');
+var user = process.env.MONGODB_USER;
+var pass = process.env.MONGODB_PASS;
+var host = process.env.MONGODB_HOST;
+var port = process.env.MONGODB_PORT;
+var db = process.env.MONGODB_DB;
+var mongoURI = 'mongodb://' +
+                user + ':' +
+                pass + '@' +
+                host + ':' +
+                port + '/' +
+                db;
+
+mongoose.connect(mongoURI);
 
 //app.use('/public', express.static(process.cwd() + '/public'));
 //app.use('/controllers', express.static(process.cwd() + '/app/controllers'));
