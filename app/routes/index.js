@@ -1,16 +1,19 @@
 'use strict';
 
-var linkHandler = require(process.cwd() +
+var LinkHandler = require(process.cwd() +
                           '/app/controllers/linkHandler.server.js');
 
-module.exports = function(app, db) {
-  var linkHandler = new linkHandler();
+module.exports = function(app) {
+  var linkHandler = new LinkHandler();
+
+  // creating short links with a middleware
+  app.use('/new/', linkHandler.addShortURL);
 
   app.route('/')
       .get(function(req, res) {
         res.sendFile(process.cwd() + '/public/index.html');
       });
 
-  app.route('/new/:link').post(linkHandler.addClick);
-  app.route('/:shortPath').get(linkHandler.addClick);
+  app.route('/:shortUrl').get(linkHandler.getFullURL);
+
 };
