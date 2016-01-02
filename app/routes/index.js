@@ -11,7 +11,7 @@ module.exports = function(app) {
 
   app.route('/')
       .get(function(req, res) {
-        res.json({message: 'hello world'});
+        res.sendFile('index.html');
       });
 
   app.route('/:shortUrl').get(linkHandler.getFullURL);
