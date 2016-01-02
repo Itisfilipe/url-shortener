@@ -1,6 +1,9 @@
 'use strict';
 
-//require('dotenv').load();
+if (process.env.DEV) {
+  require('dotenv').load();
+}
+
 var express = require('express');
 var routes = require('./app/routes/index.js');
 var mongoose = require('mongoose');
@@ -26,6 +29,6 @@ mongoose.connect(mongoURI);
 
 routes(app);
 
-app.listen(5000, function() {
-  console.log('Node.js listening on port 5000...');
+app.listen(3000, function() {
+  console.log('Node.js listening on port 3000...');
 });
