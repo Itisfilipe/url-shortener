@@ -1,7 +1,6 @@
 'use strict';
 
 var LinkModel = require('../models/links.js');
-var validURL = require('valid-url');
 var Hashids = require('hashids');
 
 var hashids = new Hashids('this is my t0p this is my t0p s3cr3t salta =p');
